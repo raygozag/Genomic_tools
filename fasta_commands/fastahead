@@ -1,0 +1,17 @@
+#!/usr/bin/python
+
+from Bio import SeqIO
+import sys
+
+inp=open(sys.argv[1],'r')
+h=int(sys.argv[2])
+
+k=0;
+
+for record in SeqIO.parse(inp,'fasta'):
+	print record.format('fasta')
+	k++
+	if(k==h):
+		break
+		
+inp.close()
